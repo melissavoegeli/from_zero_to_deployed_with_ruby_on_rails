@@ -2,12 +2,18 @@
 <html>
 <head>
   <title>Scoreboard</title>
+  <!-- your global stylesheets and javascript gets included here -->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- in our controller we redirected with an argument of :notice => 'message'
+this is how we flash status messages to the user -->
+<%= flash[:notice] unless flash[:notice] %>
+<%= flash[:error] unless flash[:error] %>
 
+<!-- all templates are included here in the global template for your app -->
 <%= yield %>
 
 </body>
