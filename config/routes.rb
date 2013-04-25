@@ -1,4 +1,16 @@
 Scoreboard::Application.routes.draw do
+  # To get a list of all valid routes your app can respond to
+  # rake routes
+  
+  root :to => 'score_boards#new'
+
+  # resources :score_boards will automatically create routes for all restful actions
+  # match will match a particular URL to an action
+  # example: match '/faq', controller: :faqs, action: :index
+  # you can sepcify the request by its action
+  get '/score_boards/new' => 'score_boards#new', :as => :new_score_board
+  post '/score_boards' => 'score_boards#create'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
