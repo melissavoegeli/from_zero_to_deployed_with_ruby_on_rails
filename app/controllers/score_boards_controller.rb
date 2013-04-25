@@ -16,9 +16,9 @@ class ScoreBoardsController < ApplicationController
     # if we can save the record, redirect to @score_board show page
     # else render the template action new again
     if @score_board.save
-      redirect_to(@score_board, :notice => ‘That worked’)
+      redirect_to(@score_board, :notice => 'That worked')
     else
-      render :action => ‘new’
+      render :action => 'new'
     end
   end
 
