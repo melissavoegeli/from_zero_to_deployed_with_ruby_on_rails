@@ -13,5 +13,8 @@ by default a form will post a new object to new -->
       %li
         = p.name
         = check_box_tag “score_board[player_ids][]”, p.id, false
+  <!-- an example of the parameters to be posted:
+  { :authentication_token => '123', :score_board =>
+  { :game => param, :player_ids => [1,2,3]} -->
   = f.submit
 
