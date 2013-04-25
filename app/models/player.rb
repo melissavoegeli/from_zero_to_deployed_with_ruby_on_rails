@@ -4,8 +4,8 @@ class Player < ActiveRecord::Base
   # This generates Select * from Player where name = 'Name';
   attr_accessible :name
 
-  validates :name, :presence => true, :length => { :minimum => 2 }, :message => 'not valid'
+  validates :name, :presence => true, :length => { :minimum => 2 }
 
   has_many :score_cards
-  has_many :score_boards, :through => score_cards
+  has_many :score_boards, :through => :score_cards
 end
