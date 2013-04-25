@@ -1,0 +1,17 @@
+%h1 New Score Board
+<!-- form helpers help you generate markup for POSTing data -->
+<!-- Example:
+<%= form_for @article, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %> -->
+<!-- this is a form helper for model objects, you can specify the action/url to post to
+by default a form will post a new object to new -->
+= form_for @score_board do |f|
+  <!-- <input id="player_game" name="player[game]" size="30" type="text" /> -->
+  = f.label :game
+  = f.text_field :game
+  %ol
+    - @score_board.initialized_players.each do |p|
+      %li
+        = p.name
+        = check_box_tag “score_board[player_ids][]”, p.id, false
+  = f.submit
+
