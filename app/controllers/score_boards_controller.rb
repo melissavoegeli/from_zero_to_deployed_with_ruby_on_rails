@@ -1,6 +1,6 @@
 class ScoreBoardsController < ApplicationController
   respond_to :html
-  # A typical restful controller is new, create, edit, update, destroy
+  # A typical restful controller is new, create, edit, update, destroy, show
   # you can render explicit templates in each action
   # by default it will automatically look in app/views/controller_name/
   # for the template with the same name as the action

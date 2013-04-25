@@ -10,6 +10,9 @@ Scoreboard::Application.routes.draw do
   # you can sepcify the request by its action
   get '/score_boards/new' => 'score_boards#new', :as => :new_score_board
   post '/score_boards' => 'score_boards#create'
+  get '/score_boards/:id' => 'score_boards#show', :as => :score_board
+  get '/players/new' => 'players#new', :as => :new_player
+  post '/players' => 'players#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
