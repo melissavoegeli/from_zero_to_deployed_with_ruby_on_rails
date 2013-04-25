@@ -1,0 +1,16 @@
+%h2 Score Board
+- @score_board.score_cards.each do |c|
+  %table
+    %tr
+      %th Player
+      %th Score
+      %th Add Points
+    %tr
+      %td= c.player.name
+      %td= cpoints
+      <!-- rendering a partial template is used with the helper render
+      when creating a partial, the naming scheme is similar to action templates
+      except the file is preceeded with a underscore
+      Example app/score_cards/_form.html.haml -->
+      = render 'score_cards/form', :card => c
+
