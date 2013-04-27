@@ -13,6 +13,9 @@ Scoreboard::Application.routes.draw do
   get '/score_boards/:id' => 'score_boards#show', :as => :score_board
   get '/players/new'      => 'players#new',       :as => :new_player
   post '/players'         => 'players#create'
+  get '/players/new' => 'players#new', :as => :new_player
+  post '/players' => 'players#create'
+  put '/score_cards/:id' => 'score_cards#update', :as => :score_card
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
